@@ -1,0 +1,25 @@
+ghci> :l rsa-encrypt.hs
+[1 of 2] Compiling Main             ( rsa-encrypt.hs, interpreted )
+
+rsa-encrypt.hs:5:1: warning: [-Wtabs]
+    Tab character found here, and in 24 further locations.
+    Suggested fix: Please use spaces instead.
+  |
+5 |                 pubKey <- openFile "rsa-pub.txt" ReadMode
+  | ^^^^^^^^
+Ok, one module loaded.
+ghci> encrypt
+ababababab
+[755897814449477554891311560316103281463534503794187138463203361]ghci> :l rsa-decrypt.hs
+[1 of 2] Compiling Main             ( rsa-decrypt.hs, interpreted )
+
+rsa-decrypt.hs:5:1: warning: [-Wtabs]
+    Tab character found here, and in 22 further locations.
+    Suggested fix: Please use spaces instead.
+  |
+5 |                 prvKey <- openFile "rsa-prv.txt" ReadMode
+  | ^^^^^^^^
+Ok, one module loaded.
+ghci> decrypt
+[755897814449477554891311560316103281463534503794187138463203361]
+ababababab

@@ -1,9 +1,5 @@
-module rsa-decrypt where 
-
 import System.IO
 import Data.Char
-import rsa-encrypt
-import rsa-decrypt
 
 decrypt = do
 		prvKey <- openFile "rsa-prv.txt" ReadMode

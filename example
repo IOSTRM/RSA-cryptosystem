@@ -1,0 +1,23 @@
+ghci> :l main.hs
+[1 of 6] Compiling Util             ( Util.hs, interpreted )
+[2 of 6] Compiling KeyGen           ( KeyGen.hs, interpreted )
+[3 of 6] Compiling Encrypt          ( Encrypt.hs, interpreted )
+[4 of 6] Compiling Decrypt          ( Decrypt.hs, interpreted )
+[5 of 6] Compiling Main             ( main.hs, interpreted )
+Ok, five modules loaded.
+ghci> keyGen
+Generating key, please wait...
+Success!
+Public Key: rsa-pub.txt
+Private Key: rsa-prv.txt
+ghci> encrypt
+test.txt
+vjjnvjntbn
+btkbnktb
+b tk bt
+
+[1389984358078115980582073925101275288171002642759801988996929515180]ghci> decrypt
+[1389984358078115980582073925101275288171002642759801988996929515180]
+vjjnvjntbn
+btkbnktb
+b tk bt

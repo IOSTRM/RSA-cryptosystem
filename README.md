@@ -3,10 +3,13 @@
 There is a first version of an implementation of RSA-cryptosystem in haskell. 
 
 # Instructions
-There are 3 files for this program. To run each of them, firstly run :l name_of_file.hs. 
-# key-gen.hs 
-When you call key-gen method from it you will see the message that key is generated, and after it is generated, you will see a corresponding message. For the creation of keys, I take prime numbers in a range (2^100, 2^112), which are pretty big. I could take a bigger interval, but then key generation would take a lot of time.
-# rsa-encrypt.hs
-Call encrypt method. Then you can print the message which you want to be encrypted as one line. In the stdout you will see a list of integers, i.e. [1234] - a corresponding encryption of the text.
-# rsa-decrypt.hs 
-To decrypt you call a method 'decrypt'. In stdin you print a list of integers which you got after encryption. The result is the original message in stdout.
+So, I have totally changed how program works. There is one main file, called main.hs. It contains functions such as keyGen which generates keys, encrypt - encryption and decrypt - decryption. To execute any function simly call :l main.hs in ghci and then type keyGen, encrypt or decrypt. 
+
+# keyGen
+Works as previuosly, no changes made, it just generates keys.
+
+# encrypt 
+Type encrypt and then print the name of file, which contains the text which you want to encrypt. Afterall, it will show a number which stands for a decrypted text.
+
+# decrypt
+Just write the number, which you got from encrypt or any else, and it will print out the text as it looks in the file.

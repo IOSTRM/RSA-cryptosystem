@@ -24,7 +24,6 @@ encrypt = do
     key <- hGetLine pubKey
     fileName <- getLine
     contents <- readFile fileName
-    putStrLn contents
     let (n,e) = read (key) :: (Integer,Integer)
     let encContents = encryptText contents (n,e)
     putStrLn encContents

@@ -9,7 +9,7 @@ So, now program works via the command line. There are three arguments which you 
 Works as previuosly, no changes made, it just generates keys.
 
 # encrypt 
-Type encrypt and then print the name of file, which contains the text which you want to encrypt. Afterall, it will show a number which stands for a decrypted text.
+Yow will see a text "enter a name of the file: ", after which you can type in the name of your file. After the message is encrypted, you will see the text "encrypted message: " and the encryption below.
 
 # decrypt
-Just write the number, which you got from encrypt or any else, and it will print out the text as it looks in the file.
+Works similarly as -encrypt.

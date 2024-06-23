@@ -1,9 +1,9 @@
 # RSA-cryptosystem
 
-There is a first version of an implementation of RSA-cryptosystem in haskell. 
+There is a third version of an implementation of RSA-cryptosystem in haskell. 
 
 # Instructions
-So, I have totally changed how program works. There is one main file, called main.hs. It contains functions such as keyGen which generates keys, encrypt - encryption and decrypt - decryption. To execute any function simly call :l main.hs in ghci and then type keyGen, encrypt or decrypt. 
+So, now program works via the command line. There are three arguments which you need: -gen-keys - generates keys; -encrypt - encrypts the message in the given file; -decrypt - decrypts the message.
 
 # keyGen
 Works as previuosly, no changes made, it just generates keys.

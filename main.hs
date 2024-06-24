@@ -30,7 +30,6 @@ encrypt :: String -> IO ()
 encrypt fileName = do
     key <- readFile "rsa-pub.txt"
     contents <- readFile fileName
-    putStrLn contents
     let (n, e) = read key :: (Integer,Integer)
     let encContents = encryptText contents (n,e)
     putStrLn encContents

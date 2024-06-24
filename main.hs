@@ -38,8 +38,7 @@ encrypt fileName = do
 decrypt :: String -> IO ()
 decrypt fileName = do
     key <- readFile "rsa-prv.txt"
-    handle <- openFile fileName ReadMode
-    contents <- hGetContents handle
+    contents <- readFile fileName
     putStrLn contents
     let (n,d) = read key :: (Integer,Integer)
     let decContens = decryptText contents (n, d)

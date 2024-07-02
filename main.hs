@@ -5,14 +5,15 @@ import System.IO
 import Data.Char
 import System.Random
 import System.Environment (getArgs)
+import Control.Monad (forM_)
 
 main :: IO ()
 main = do
     args <- getArgs
     case args of
-        ("-gen-keys" : _)            -> keyGen
-        ("-encrypt" : fileName : _)  -> encrypt fileName
-        ("-decrypt" : fileName : _)  -> decrypt fileName
+        ["-gen-keys"]            -> keyGen
+        ["-encrypt", fileName]  -> encrypt fileName
+        ["-decrypt", fileName]  -> decrypt fileName
         _                            -> putStrLn "Invalid command. Use -gen-keys or -encrypt <file> or -decrypt <file>"
 
 
@@ -26,20 +27,24 @@ keyGen = do
     putStr "Public Key: rsa-pub.txt\n"
     putStr "Private Key: rsa-prv.txt\n"
 
+
 encrypt :: String -> IO ()
 encrypt fileName = do
     key <- readFile "rsa-pub.txt"
+    let (n, e) = read key :: (Integer, Integer)
     contents <- readFile fileName
-    let (n, e) = read key :: (Integer,Integer)
-    let encContents = encryptText contents (n,e)
-    putStrLn encContents
+    let linesOfFile = lines contents
+    forM_ linesOfFile $ \line -> do
+        let encLine = encryptText line (n, e)
+        putStrLn encLine
 
 decrypt :: String -> IO ()
 decrypt fileName = do
     key <- readFile "rsa-prv.txt"
     contents <- readFile fileName
-    putStrLn contents
     let (n,d) = read key :: (Integer,Integer)
-    let decContens = decryptText contents (n, d)
     putStrLn "your decrypted message: "
-    putStrLn decContens
+    let linesOfFile = lines contents
+    forM_ linesOfFile $ \line -> do
+        let decLine = decryptText line (n, d)
+        putStrLn decLine
